@@ -17,15 +17,15 @@ public class PlayerBehavior : MonoBehaviour
         }
     
         if(Input.GetKeyDown(KeyCode.LeftArrow)){
-          gameObject.transform.position += new Vector3(0,-.5f,0);
+          gameObject.transform.position += new Vector3(-.5f,0,0);
         }
          if(Input.GetKeyDown(KeyCode.RightArrow)){
-          gameObject.transform.position += new Vector3(0,.5f,0);
+          gameObject.transform.position += new Vector3(.5f,0,0);
         }
     
     }
     void Hop(){
         
-        gameObject.transform.position += new Vector3(0,0,2f);
+        gameObject.transform.position += new Vector3(0,0,.5f);
     }
 }
