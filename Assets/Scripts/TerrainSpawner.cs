@@ -43,7 +43,7 @@ public class TerrainSpawner : MonoBehaviour
             Destroy(currentTerrains[0]);
             currentTerrains.RemoveAt(0);
         }
-        currentPos.z += 2; 
+        currentPos.z += 3; 
         }
         
 

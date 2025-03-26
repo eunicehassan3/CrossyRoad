@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 3557380344272164865}
   - component: {fileID: 6047256287382869112}
   - component: {fileID: 8718207260013250753}
+  - component: {fileID: 3808175021158514702}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -465,7 +466,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 4}
-  m_LocalScale: {x: 50, y: 1, z: 2}
+  m_LocalScale: {x: 50, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5118248648730368830}
@@ -553,6 +554,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3808175021158514702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5308185729172535433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4241e5d6c20427a9a3bcf148e60b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPrefabs:
+  - {fileID: 1640075728852053109, guid: a1d9b2676bd1b4adfa85eb5d122fd268, type: 3}
+  - {fileID: 1840362642119598001, guid: 7b70d50cce6cc4cfeba508715507149c, type: 3}
+  - {fileID: 7215136585958610839, guid: 999607198f40d4a5c88473caf605c198, type: 3}
+  speed: 6
 --- !u!1 &5365400129786363815
 GameObject:
   m_ObjectHideFlags: 0
