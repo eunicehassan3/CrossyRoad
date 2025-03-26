@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
@@ -11,12 +12,20 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow){
-            
-        })
+        if(Input.GetKeyDown(KeyCode.UpArrow)){
+            Hop();
+        }
+    
+        if(Input.GetKeyDown(KeyCode.LeftArrow)){
+          gameObject.transform.position += new Vector3(0,-.5f,0);
+        }
+         if(Input.GetKeyDown(KeyCode.RightArrow)){
+          gameObject.transform.position += new Vector3(0,.5f,0);
+        }
+    
     }
-
     void Hop(){
         
+        gameObject.transform.position += new Vector3(0,0,2f);
     }
 }

@@ -10,6 +10,9 @@ public class TerrainSpawner : MonoBehaviour
     private Vector3 currentPos = new Vector3(0,0,0);
     // private GameObject[] currentTerrains;
     private List<GameObject> currentTerrains;
+    public float minDistanceFromPlayer;
+    public GameObject player;
+    private float playerPos;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +20,7 @@ public class TerrainSpawner : MonoBehaviour
         currentTerrains = new List<GameObject>();
        for(int i= 0; i < TerrainCount; i++){
         SpawnTerrain();
+
        }
        
     }
@@ -24,14 +28,15 @@ public class TerrainSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow)){
+        // if(Input.GetKeyDown(KeyCode.UpArrow)){
             SpawnTerrain();
-        }
+        // }
     }
 
     void SpawnTerrain(){
-        
-        GameObject terrain = Instantiate(terrainPrefabs[Random.Range(0, terrainPrefabs.Length)],currentPos, Quaternion.identity );
+        playerPos = player.transform.position.z;
+        if(currentPos.z - playerPos < minDistanceFromPlayer){
+            GameObject terrain = Instantiate(terrainPrefabs[Random.Range(0, terrainPrefabs.Length)],currentPos, Quaternion.identity );
         // currentTerrains.Append(terrain);
         currentTerrains.Add(terrain);
         if(currentTerrains.Count > TerrainCount){
@@ -39,6 +44,8 @@ public class TerrainSpawner : MonoBehaviour
             currentTerrains.RemoveAt(0);
         }
         currentPos.z += 2; 
+        }
+        
 
     }
 }
