@@ -1,11 +1,15 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerBehavior : MonoBehaviour
 {
+    public static int score; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        score = 0;
         transform.position = new Vector3(0,0.5f,0);
     }
 
@@ -27,11 +31,13 @@ public class PlayerBehavior : MonoBehaviour
     void Hop(){
         
         gameObject.transform.position += new Vector3(0,0,.5f);
+        score += 5;
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Obstacle"){
+            // SceneManager.LoadScene("GameOver");
             Debug.Log("Game Over");
         }
     }
