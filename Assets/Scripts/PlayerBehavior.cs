@@ -28,4 +28,11 @@ public class PlayerBehavior : MonoBehaviour
         
         gameObject.transform.position += new Vector3(0,0,.5f);
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Obstacle"){
+            Debug.Log("Game Over");
+        }
+    }
 }
