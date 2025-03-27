@@ -6,6 +6,7 @@ public class SpawnLog : MonoBehaviour
     public GameObject log;
     
     public GameObject spawnPos;
+    public GameObject spawnPos2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +24,7 @@ public class SpawnLog : MonoBehaviour
         while(true){
              yield return new WaitForSeconds(Random.Range(1, 4));
             Instantiate(log, spawnPos.transform.position,log.transform.rotation);
+            Instantiate(log, spawnPos2.transform.position,log.transform.rotation);
         }
 
    

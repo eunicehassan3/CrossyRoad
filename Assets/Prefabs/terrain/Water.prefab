@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &920459016732882234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2922270238019696660}
+  m_Layer: 0
+  m_Name: SpawnPos (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2922270238019696660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920459016732882234}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.302, y: 0.6, z: 0.21}
+  m_LocalScale: {x: 0.02, y: 1, z: 0.33333334}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3585690193692305944}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &1374528102384992802
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,10 +61,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2}
-  m_LocalScale: {x: 50, y: 1, z: 3}
+  m_LocalScale: {x: 30, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5482760649602963288}
+  - {fileID: 2922270238019696660}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3804311146412754557
@@ -124,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   log: {fileID: 8857593726475263791, guid: 6913c9c2468944e878a3fe80bd5108bd, type: 3}
   spawnPos: {fileID: 8948331836066638732}
+  spawnPos2: {fileID: 920459016732882234}
 --- !u!1 &8948331836066638732
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 8948331836066638732}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.4, y: 0.6, z: -0.2}
+  m_LocalPosition: {x: 0.4, y: 0.6, z: -0.36}
   m_LocalScale: {x: 0.02, y: 1, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children: []

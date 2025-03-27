@@ -13,6 +13,10 @@ PrefabInstance:
       value: Grass (3) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2347771827017481741, guid: 4c0844cb62f9e4c77bade09731e642c3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347771827017481741, guid: 4c0844cb62f9e4c77bade09731e642c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
