@@ -8,7 +8,7 @@ public class PlayerBehavior : MonoBehaviour
     public static int score; 
     private Animator animator;
     public GameObject gameOverPanel;
-    bool isHopping;
+    bool isHopping = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,7 +20,7 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow)){
+        if(Input.GetKeyDown(KeyCode.UpArrow) && isHopping){
             
             Hop();
             isHopping = true;
@@ -49,6 +49,8 @@ public class PlayerBehavior : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacle"){
             gameOverPanel.SetActive(true);
+            isHopping = false;
+            // gameObject.transform.position = gameObject.transform.position;
             // SceneManager.LoadScene("GameOver");
             Debug.Log("Game Over");
         }
