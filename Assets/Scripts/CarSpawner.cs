@@ -23,7 +23,7 @@ public class CarSpawner : MonoBehaviour
     private IEnumerator SpawnVehicle(){
         
         while(true){
-             yield return new WaitForSeconds(Random.Range(1, 5));
+             yield return new WaitForSeconds(Random.Range(1, 3));
             Instantiate(carPrefabs[Random.Range(0, carPrefabs.Length)], spawnPos.transform.position,carPrefabs[0].transform.rotation );
         }
 

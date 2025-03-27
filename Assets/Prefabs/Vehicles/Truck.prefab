@@ -1218,7 +1218,7 @@ GameObject:
   - component: {fileID: 6377122842899869768}
   m_Layer: 0
   m_Name: Truck
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1316,7 +1316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6388e18ac68b4813930950790c2aa42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
 --- !u!1 &7864654454678598374
 GameObject:
   m_ObjectHideFlags: 0

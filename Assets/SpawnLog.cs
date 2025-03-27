@@ -21,7 +21,7 @@ public class SpawnLog : MonoBehaviour
     private IEnumerator SpawnLogs(){
         
         while(true){
-             yield return new WaitForSeconds(Random.Range(1, 5));
+             yield return new WaitForSeconds(Random.Range(1, 4));
             Instantiate(log, spawnPos.transform.position,log.transform.rotation);
         }
 
