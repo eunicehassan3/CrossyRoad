@@ -6,18 +6,24 @@ using UnityEngine.SocialPlatforms.Impl;
 public class PlayerBehavior : MonoBehaviour
 {
     public static int score; 
+    private Animator animator;
+    public GameObject gameOverPanel;
+    bool isHopping;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         score = 0;
-        transform.position = new Vector3(0,0.5f,0);
+        animator = GetComponent<Animator>();
+        transform.position = new Vector3(0,1,0);
     }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.UpArrow)){
+            
             Hop();
+            isHopping = true;
         }
     
         if(Input.GetKeyDown(KeyCode.LeftArrow)){
@@ -30,13 +36,19 @@ public class PlayerBehavior : MonoBehaviour
     }
     void Hop(){
         
+        // animator.SetTrigger("hop");
         gameObject.transform.position += new Vector3(0,0,.5f);
         score += 5;
+    }
+
+    public void FinishHop(){
+        isHopping = false;
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Obstacle"){
+            gameOverPanel.SetActive(true);
             // SceneManager.LoadScene("GameOver");
             Debug.Log("Game Over");
         }
