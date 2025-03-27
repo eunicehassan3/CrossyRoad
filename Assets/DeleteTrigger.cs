@@ -1,3 +1,4 @@
+using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -17,8 +18,8 @@ public class DeleteTrigger : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-    if(other.gameObject.tag == "Obstacle" && gameObject != null){
-        Destroy(other);
+    if(other.gameObject.CompareTag("Obstacle")){
+        Destroy(other.gameObject);
     }
      }
 }
