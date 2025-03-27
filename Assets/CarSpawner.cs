@@ -25,8 +25,15 @@ public class CarSpawner : MonoBehaviour
     }
 
     private IEnumerator SpawnVehicle(){
-        yield return new WaitForSeconds(Random.Range(0, 3));
-        GameObject car = Instantiate(carPrefabs[Random.Range(0, carPrefabs.Length)], spawnPos.transform.position,carPrefabs[0].transform.rotation );
-        car.transform.Translate(Vector3.forward * speed);
+        
+        while(true){
+             yield return new WaitForSeconds(Random.Range(3, 5));
+            Instantiate(carPrefabs[Random.Range(0, carPrefabs.Length)], spawnPos.transform.position,carPrefabs[0].transform.rotation );
+        }
+
+   
+       
+       
+     
     }
 }

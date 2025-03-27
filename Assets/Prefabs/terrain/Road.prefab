@@ -461,7 +461,7 @@ Transform:
   m_GameObject: {fileID: 3554465706266628652}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.454, y: 1, z: 0}
+  m_LocalPosition: {x: 0.454, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -600,7 +600,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carPrefabs:
   - {fileID: 1640075728852053109, guid: a1d9b2676bd1b4adfa85eb5d122fd268, type: 3}
-  - {fileID: 501302066786700823, guid: 53ea53b0b2dfe413ab53ff187c826fee, type: 3}
   - {fileID: 7215136585958610839, guid: 999607198f40d4a5c88473caf605c198, type: 3}
   - {fileID: 9108931911849781203, guid: a45a9546f76fc4c52aed65d5141c6dd2, type: 3}
   - {fileID: 4790692867320461647, guid: 6ae9089307a09443ea52e50fb123ee30, type: 3}
