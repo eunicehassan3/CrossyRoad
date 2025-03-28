@@ -1,29 +1,31 @@
 
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
+
+
 
 public class PlayerBehavior : MonoBehaviour
 {
     public static int score; 
     private Animator animator;
     public GameObject gameOverPanel;
-    bool isHopping = true;
+    private bool isGrounded = true;
+    bool isHopping = false;
+    bool isDead = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         score = 0;
         animator = GetComponent<Animator>();
-        transform.position = new Vector3(0,1,0);
+        transform.position = new Vector3(0,.5f,0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow) && isHopping){
+        if(Input.GetKeyDown(KeyCode.UpArrow) && !isHopping && !isDead){
             
             Hop();
-            isHopping = true;
+            
         }
     
         if(Input.GetKeyDown(KeyCode.LeftArrow)){
@@ -35,24 +37,54 @@ public class PlayerBehavior : MonoBehaviour
     
     }
     void Hop(){
+
+         animator.SetTrigger("hopTrigger");
+        // isGrounded = false;
+        // animator.SetBool("hop", true);
+        isHopping = true;
+        // rb.linearVelocity = new Vector3(0, 5f, 0);
+        gameObject.transform.position += new Vector3(0,0,.7f);
         
-        // animator.SetTrigger("hop");
-        gameObject.transform.position += new Vector3(0,0,.5f);
+        // rb.linearVelocity = new Vector3(0, 5f, 0);
         score += 5;
     }
 
-    public void FinishHop(){
-        isHopping = false;
-    }
+    // public void FinishHop(){
+    //     animator.SetBool("hop", false);
+    //     isHopping = false;
+    // }
+
+    // private void OnLanding()
+    // {
+    //     isGrounded = true;
+    //     animator.SetBool("hop", false);
+    // }
 
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Obstacle"){
             gameOverPanel.SetActive(true);
-            isHopping = false;
+            isDead = true;
+
             // gameObject.transform.position = gameObject.transform.position;
-            // SceneManager.LoadScene("GameOver");
+           
             Debug.Log("Game Over");
         }
+
+        if (collision.gameObject.CompareTag("terrain")) 
+        {
+            ResetToIdle();
+            // animator.ResetTrigger("hop"); // Reset trigger
+            // animator.Play("Idle");
+        }
+
+
+    }
+
+    public void ResetToIdle()
+    {
+        animator.ResetTrigger("hop");
+        // animator.Play("Idle");
+        isHopping = false;
     }
 }
