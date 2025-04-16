@@ -11,12 +11,14 @@ public class PlayerBehavior : MonoBehaviour
     private bool isGrounded = true;
     bool isHopping = false;
     bool isDead = false;
+    private AudioSource crashAudio;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         score = 0;
         animator = GetComponent<Animator>();
         transform.position = new Vector3(0,.5f,0);
+        crashAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -68,6 +70,7 @@ public class PlayerBehavior : MonoBehaviour
 
             // gameObject.transform.position = gameObject.transform.position;
            
+           crashAudio.Play();
             Debug.Log("Game Over");
         }
 
